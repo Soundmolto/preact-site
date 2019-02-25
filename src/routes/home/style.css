@@ -1,0 +1,36 @@
+.header {
+	position: relative;
+	min-height: 450px;
+	height: 450px;
+	max-height: 50vh;
+	filter: grayscale(0.7) contrast(1.2);
+	z-index: 1;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.overlay h1, .overlay h3 {
+	width: 100%;
+	text-align: center;
+}
+
+.content {
+	margin-top: -50px;
+	z-index: 2;
+	position: relative;
+}
+
+small.smol {
+	font-size: 1rem;
+}
