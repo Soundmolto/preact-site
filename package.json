@@ -9,7 +9,8 @@
     "serve": "preact build && preact serve",
     "dev": "preact watch",
     "lint": "eslint src",
-    "server": "node server.js"
+    "server": "node server.js",
+    "postinstall": "npm i -g preact-cli"
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor",
@@ -43,6 +44,6 @@
     "preact-router": "^2.5.5",
     "react-ga": "^2.5.3",
     "styled-loaders": "^0.2.1",
-    "superstatic": "^6.0.1",
+    "superstatic": "^6.0.1"
   }
 }
