@@ -1,18 +1,16 @@
-import { h, Component } from 'preact';
-import { Router } from 'preact-router';
-import ReactGA from 'react-ga';
-import Header from '../Header';
-import Home from 'async!../../routes/home';
+import { h, Component } from "preact";
+import { Router } from "preact-router";
+import ReactGA from "react-ga";
+import Header from "../Header";
+import Home from "async!../../routes/home";
 
 export default class App extends Component {
-
 	header;
-	headerRef = e => this.header = e;
-	
-	componentDidMount () {
-		ReactGA.initialize('UA-125828388-1');
+
+	componentDidMount() {
+		ReactGA.initialize("UA-125828388-1");
 		if (typeof window !== "undefined") {
-			document.body.classList.add('mdc-theme--dark');
+			document.body.classList.add("mdc-theme--dark");
 		}
 	}
 
@@ -24,27 +22,25 @@ export default class App extends Component {
 		this.currentUrl = e.url;
 		if (typeof window !== "undefined") {
 			ReactGA.pageview(window.location.pathname + window.location.search);
-			const event = new Event('url-change');
+			const event = new Event("url-change");
 			window.document.dispatchEvent(event);
 		}
 	};
 
-	get_current_route () {
-		return this.currentUrl;
-	}
+	get_current_route = () => this.currentUrl;
 
-	render () {
-		const url = this.get_current_route.bind(this);
+	render() {
+		const url = this.get_current_route();
 
 		return (
 			<div id="app">
-				<Header get_url={url} ref={this.headerRef} />
+				<Header />
 				<div class="route-container">
 					<Router onChange={this.handleRoute}>
 						<Home path="/" className="route-page" />
+						<Home path="/about" className="route-page" />
 					</Router>
 				</div>
-				{/* <Footer ref={e => (this.footer = e)} audioContext={this.audioContext} queue={queue} audioPlayer={this.player} /> */}
 			</div>
 		);
 	}

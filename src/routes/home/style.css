@@ -1,36 +1,48 @@
 .header {
-	position: relative;
-	min-height: 450px;
-	height: 450px;
-	max-height: 50vh;
-	filter: grayscale(0.7) contrast(1.2);
-	z-index: 1;
+  position: relative;
+  min-height: 450px;
+  height: 450px;
+  max-height: 50vh;
+  filter: grayscale(0.7) contrast(1.2);
+  z-index: 1;
 }
 
 .overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	background: rgba(0, 0, 0, 0.3);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.overlay h1, .overlay h3 {
-	width: 100%;
-	text-align: center;
+.overlay h1,
+.overlay h3 {
+  width: 100%;
+  text-align: center;
+}
+
+@supports (backdrop-filter: blur(10px)) {
+  .overlay h1 {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    padding: 50px;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+  }
 }
 
 .content {
-	margin-top: -50px;
-	z-index: 2;
-	position: relative;
+  margin-top: -50px;
+  z-index: 2;
+  position: relative;
 }
 
 small.smol {
-	font-size: 1rem;
+  font-size: 1rem;
 }
