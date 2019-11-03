@@ -26,6 +26,59 @@
   text-align: center;
 }
 
+
+.content {
+  margin-top: -50px;
+  z-index: 2;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.container a {
+  padding: 10px;
+  border-radius: 10px;
+  width: calc(100% - 20px);
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.container a p {
+  margin: 0 auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  max-width: 150px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+.artwork {
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin: 0 auto 10px;
+  overflow: hidden;
+}
+
+.user {
+  opacity: 0.5;
+}
+
+.mdc-custom-card h1 {
+  margin: 0 0 10px 0;
+}
+
+.container a:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
 @supports (backdrop-filter: blur(10px)) {
   .overlay h1 {
     background: rgba(0, 0, 0, 0.4);
@@ -35,13 +88,13 @@
     border-radius: 10px;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
   }
+
+  .content .mdc-custom-card {
+    background: var(--mdc-theme--card-bg--transparent);
+    backdrop-filter: blur(20px);
+  }
 }
 
-.content {
-  margin-top: -50px;
-  z-index: 2;
-  position: relative;
-}
 
 small.smol {
   font-size: 1rem;

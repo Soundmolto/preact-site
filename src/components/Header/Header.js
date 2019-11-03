@@ -85,6 +85,10 @@ export default class Header extends Component {
 									App
 								</Link>
 
+								<Link href="/download">
+									Download
+								</Link>
+
 								<Link href="/about">About</Link>
 							</div>
 						</Toolbar.Section>
